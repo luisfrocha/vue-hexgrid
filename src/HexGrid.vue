@@ -11,29 +11,29 @@
   </svg>
 </template>
 <script>
-export default {
-  name: "HexGrid",
-  props: {
-    width: {
-      type: [String, Number],
-      required: true,
-      default() {
-        return 800;
-      }
-    },
-    height: {
-      type: [String, Number],
-      required: true,
-      default() {
-        return 600;
-      }
-    },
-    viewBox: {
-      type: String,
-      default() {
-        return "-50 -50 100 100";
+  export default {
+    name: "HexGrid",
+    props: {
+      width: {
+        type: [String, Number],
+        required: true,
+        default() {
+          return 800;
+        }
+      },
+      height: {
+        type: [String, Number],
+        required: true,
+        default() {
+          return 600;
+        }
+      },
+      viewBox: {
+        type: String,
+        default() {
+          return "-50 -50 100 100";
+        }
       }
     }
-  }
-};
+  };
 </script>

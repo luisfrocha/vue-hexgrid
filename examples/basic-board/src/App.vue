@@ -16,15 +16,19 @@
 </template>
 
 <script>
-import { HexGrid, Layout, Hexagon, GridGenerator } from "../../../src";
+  import {
+    HexGrid, Layout, Hexagon, GridGenerator,
+  } from '../../../src';
 
-export default {
-  name: "App",
-  components: { HexGrid, Layout, Hexagon },
-  data() {
-    return { hexagons: GridGenerator.parallelogram(-2, 3, -2, 1) };
-  }
-};
+  export default {
+    name: 'App',
+    components: {
+      HexGrid, Layout, Hexagon,
+    },
+    data () {
+      return { hexagons: GridGenerator.parallelogram( -2, 3, -2, 1 ) };
+    },
+  };
 </script>
 <style lang="scss">
 .App {

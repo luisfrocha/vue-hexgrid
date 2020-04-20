@@ -2,16 +2,8 @@
   <div class="App">
     <h2>Hexagon Pattern Swap</h2>
     <p>Click a tile to swap it's pattern</p>
-    <hex-grid
-      width="1200"
-      height="800"
-    >
-      <layout
-        :size="{ x: 10, y: 10 }"
-        :flat="false"
-        :spacing="1.1"
-        :origin="{ x: 0, y: 0 }"
-      >
+    <hex-grid width="1200" height="800">
+      <layout :size="{ x: 10, y: 10 }" :flat="false" :spacing="1.1" :origin="{ x: 0, y: 0 }">
         <hexagon
           v-for="(hex, i) in hexagons"
           :key="i"
@@ -19,73 +11,67 @@
           :r="hex.r"
           :s="hex.s"
           :fill="hex.pattern"
-          :on-click="onClick"
+          @click="onClick"
         >
           <text-component>{{ HexUtils.getID(hex) }}</text-component>
         </hexagon>
-        <pattern-component
-          id="pattern1"
-          link="https://picsum.photos/200?image=80"
-        />
-        <pattern-component
-          id="pattern2"
-          link="https://picsum.photos/200?image=82"
-        />
+        <pattern-component id="pattern1" link="https://picsum.photos/200?image=80" />
+        <pattern-component id="pattern2" link="https://picsum.photos/200?image=82" />
       </layout>
     </hex-grid>
   </div>
 </template>
 <script>
-  import {
-    GridGenerator,
+import {
+  GridGenerator,
+  HexGrid,
+  Layout,
+  Text,
+  Pattern,
+  Hexagon,
+  HexUtils,
+} from '../../../src';
+
+export default {
+  name: 'App',
+  components: {
     HexGrid,
     Layout,
-    Text,
-    Pattern,
+    TextComponent: Text,
+    PatternComponent: Pattern,
     Hexagon,
-    HexUtils,
-  } from '../../../src';
+  },
+  data () {
+    return {
+      hexagons: [],
+      HexUtils,
+    };
+  },
+  created () {
+    this.hexagons = GridGenerator.hexagon( 2 ).map( hex => {
+      hex.pattern = 'pattern1';
+      return hex;
+    } );
+  },
+  methods: {
+    onClick ( event, source ) {
+      // Go through all of our hexagons and update patterns
+      const hexas = this.hexagons.map( hex => {
+        // Switch pattern only for the hexagon that was clicked
+        if ( HexUtils.equals( source.hex, hex ) ) {
+          // Assign new pattern to _our_ data
+          hex.pattern =
+            source.$props.fill === 'pattern1' ? 'pattern2' : 'pattern1';
+        }
 
-  export default {
-    name: 'App',
-    components: {
-      HexGrid,
-      Layout,
-      TextComponent: Text,
-      PatternComponent: Pattern,
-      Hexagon,
-    },
-    data () {
-      return {
-        hexagons: [],
-        HexUtils,
-      };
-    },
-    created () {
-      this.hexagons = GridGenerator.hexagon( 2 ).map( hex => {
-        hex.pattern = 'pattern1';
         return hex;
       } );
-    },
-    methods: {
-      onClick ( event, source ) {
-        // Go through all of our hexagons and update patterns
-        const hexas = this.hexagons.map( hex => {
-          // Switch pattern only for the hexagon that was clicked
-          if ( HexUtils.equals( source.hex, hex ) ) {
-            // Assign new pattern to _our_ data
-            hex.pattern =
-              source.$props.fill === 'pattern1' ? 'pattern2' : 'pattern1';
-          }
 
-          return hex;
-        } );
-
-        // Save our new hexagon data to the state, which will cause a re-render
-        this.hexagons = hexas;
-      },
+      // Save our new hexagon data to the state, which will cause a re-render
+      this.hexagons = hexas;
     },
-  };
+  },
+};
 </script>
 <style lang="scss">
   body {

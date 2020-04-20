@@ -22,7 +22,7 @@
           transitionEnter="false"
           transitionLeave="false"
         >
-          <Hexagon :q="4" :r="-2" :s="-3" />
+          <hexagon :q="4" :r="-2" :s="-3" />
         </CSSTransitionGroup>
       </layout>
       <defs>
@@ -60,18 +60,22 @@
   </div>
 </template>
 <script>
-import { HexGrid, Layout, Hexagon, GridGenerator } from "../../../src";
+  import {
+    HexGrid, Layout, Hexagon, GridGenerator,
+  } from '../../../src';
 
-export default {
-  name: "App",
-  components: { HexGrid, Layout, Hexagon },
-  data() {
-    return { hexagons: [] };
-  },
-  created() {
-    this.hexagons = GridGenerator.rectangle(6, 6);
-  }
-};
+  export default {
+    name: 'App',
+    components: {
+      HexGrid, Layout, Hexagon,
+    },
+    data () {
+      return { hexagons: [] };
+    },
+    created () {
+      this.hexagons = GridGenerator.rectangle( 6, 6 );
+    },
+  };
 </script>
 
 <style lang="scss">

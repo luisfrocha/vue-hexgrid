@@ -4,19 +4,11 @@
     <div>
       <strong>Template:</strong>
       <select v-model="selection">
-        <option
-          v-for="opt in selections"
-          :key="opt"
-        >
-          {{ opt }}
-        </option>
+        <option v-for="opt in selections" :key="opt">{{ opt }}</option>
       </select>
     </div>
-    <hr>
-    <hex-grid
-      :width="config.width"
-      :height="config.height"
-    >
+    <hr />
+    <hex-grid :width="config.width" :height="config.height">
       <layout
         :size="size"
         :flat="config.layout.flat"
@@ -69,7 +61,7 @@
           y: this.config.layout.height,
         };
       },
-      hexagons(){
+      hexagons () {
         return GridGenerator.getGenerator( this.config.map ).apply( this, this.config.mapProps );
       },
     },

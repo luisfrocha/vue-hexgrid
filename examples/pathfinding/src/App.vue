@@ -3,16 +3,8 @@
     <h2>Pathfinding & active highlight</h2>
     <p>Click a tile to start drawing a path to your cursor. Click again to cancel.</p>
     <p>Hover around the board to see helper lines drawn.</p>
-    <hex-grid
-      width="1200"
-      height="800"
-    >
-      <layout
-        :size="{ x: 6, y: 6 }"
-        :flat="false"
-        :spacing="1.1"
-        :origin="{ x: 0, y: 0 }"
-      >
+    <hex-grid width="1200" height="800">
+      <layout :size="{ x: 6, y: 6 }" :flat="false" :spacing="1.1" :origin="{ x: 0, y: 0 }">
         <hexagon
           v-for="(hex,i) in hexagons"
           :key="i"
@@ -20,15 +12,12 @@
           :r="hex.r"
           :s="hex.s"
           :class="hex.props ? hex.props.className : null"
-          :on-mouse-enter="onMouseEnter"
-          :on-click="onClick"
+          @mouseenter="onMouseEnter"
+          @click="onClick"
         >
           <text-component>{{ HexUtils.getID(hex) }}</text-component>
         </hexagon>
-        <path-component
-          :start="path.start"
-          :end="path.end"
-        />
+        <path-component :start="path.start" :end="path.end" />
       </layout>
     </hex-grid>
   </div>

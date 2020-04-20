@@ -9,27 +9,27 @@
   </text>
 </template>
 <script>
-export default {
-  name: "TextComponent",
-  props: {
-    x: {
-      type: [String, Number],
-      default() {
-        return null;
-      }
-    },
-    y: {
-      type: [String, Number],
-      default() {
-        return null;
-      }
-    },
-    className: {
-      type: String,
-      default() {
-        return null;
+  export default {
+    name: "TextComponent",
+    props: {
+      x: {
+        type: [String, Number],
+        default() {
+          return null;
+        }
+      },
+      y: {
+        type: [String, Number],
+        default() {
+          return null;
+        }
+      },
+      className: {
+        type: String,
+        default() {
+          return null;
+        }
       }
     }
-  }
-};
+  };
 </script>

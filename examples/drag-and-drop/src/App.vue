@@ -1,5 +1,5 @@
 <template>
-  <div className="app">
+  <div class="app">
     <h2>Drag & drop</h2>
     <p>Drag tiles from the right-side grid and drop them to the left grid.</p>
     <p>
@@ -23,14 +23,16 @@
   </div>
 </template>
 <script>
-import { HexGrid } from "../../../src";
-import GameLayout from "./GameLayout";
-import TilesLayout from "./TilesLayout";
+  import { HexGrid } from '../../../src';
+  import GameLayout from './GameLayout';
+  import TilesLayout from './TilesLayout';
 
-export default {
-  name: "App",
-  components: { HexGrid, GameLayout, TilesLayout }
-};
+  export default {
+    name: 'App',
+    components: {
+      HexGrid, GameLayout, TilesLayout,
+    },
+  };
 </script>
 <style lang="scss">
 body {
