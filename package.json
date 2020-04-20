@@ -1,13 +1,18 @@
 {
   "name": "vue-hexgrid",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.1",
+  "description": "Interactive hexagon grids using Vue",
+  "main": "src/index.js",
+  "author": "Luis F Rocha",
+  "repository": "luisfrocha/vue-hexgrid",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
+    "@vue/eslint-config-standard": "^5.1.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },

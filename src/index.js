@@ -11,4 +11,6 @@ import Text from './Hexagon/Text';
 
 import Hex from './models/Hex';
 
-export {GridGenerator, HexGrid, HexUtils, Layout, Path, Pattern, Hexagon, Text, Hex};
+export {
+  GridGenerator, HexGrid, HexUtils, Layout, Path, Pattern, Hexagon, Text, Hex,
+};

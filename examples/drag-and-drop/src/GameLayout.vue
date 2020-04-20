@@ -33,7 +33,7 @@
     Text,
     Pattern,
     HexUtils,
-  } from '../../../src';
+  } from 'vue-hexgrid';
 
   export default {
     name: 'GameLayout',

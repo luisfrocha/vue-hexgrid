@@ -30,7 +30,7 @@ import {
   Pattern,
   Hexagon,
   HexUtils,
-} from '../../../src';
+} from 'vue-hexgrid';
 
 export default {
   name: 'App',

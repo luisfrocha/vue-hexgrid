@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-  import { HexGrid } from '../../../src';
+  import { HexGrid } from 'vue-hexgrid';
   import GameLayout from './GameLayout';
   import TilesLayout from './TilesLayout';
 

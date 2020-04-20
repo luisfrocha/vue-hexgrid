@@ -18,7 +18,7 @@
 <script>
   import {
     HexGrid, Layout, Hexagon, GridGenerator,
-  } from '../../../src';
+  } from 'vue-hexgrid';
 
   export default {
     name: 'App',

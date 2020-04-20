@@ -33,7 +33,7 @@
 <script>
   import {
     HexGrid, Layout, Hexagon, Text, GridGenerator, HexUtils,
-  } from '../../../src';
+  } from 'vue-hexgrid';
   import configs from './configurations';
   export default {
     name: 'App',
@@ -66,7 +66,6 @@
       },
     },
   };
-
 </script>
 <style lang="scss">
 .App {

@@ -59,7 +59,7 @@
     Text,
     Pattern,
     Hex,
-  } from '../../../src';
+  } from 'vue-hexgrid';
 
   export default {
     name: 'App',
