@@ -29,21 +29,21 @@
         type: Number,
         required: true,
         default () {
-          return null;
+          return 0;
         }
       },
       r: {
         type: Number,
         required: true,
         default () {
-          return null;
+          return 0;
         }
       },
       s: {
         type: Number,
         required: true,
         default () {
-          return null;
+          return 0;
         }
       },
       fill: {
@@ -77,12 +77,13 @@
       this.hex = new Hex( this.q, this.r, this.s );
       this.pixel = HexUtils.hexToPixel( this.hex, this.$parent.layout );
     },
-    updated ( nextProps ) {
-      if ( nextProps ) {
-        const { q, r, s } = nextProps;
-        this.hex = new Hex( q, r, s );
-        this.pixel = HexUtils.hexToPixel( this.hex, this.layout );
-      }
+    updated () {
+      this.hex.q = this.$props.q;
+      this.hex.r = this.$props.r;
+      this.hex.s = this.$props.s;
+      const point = HexUtils.hexToPixel( this.hex, this.$parent.layout );
+      this.pixel.x = point.x;
+      this.pixel.y = point.y;
     },
     methods: {
       handleClick ( e ) {
