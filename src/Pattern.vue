@@ -1,6 +1,6 @@
 <template>
   <defs>
-    <pattern :id="id" patternUnits="objectBoundingBox" x="0" y="0" :width="size.x" :height="size.y">
+    <pattern :id="id" :patternUnits="patternUnits" x="0" y="0" :width="size.x" :height="size.y">
       <image :xlink-href="link" :href="link" x="0" y="0" :width="size.x * 2" :height="size.y * 2" />
     </pattern>
   </defs>
@@ -14,22 +14,20 @@
       id: {
         type: String,
         required: true,
-        default () {
-          return null;
-        }
+        default: null,
       },
       link: {
         type: String,
         required: true,
-        default () {
-          return null;
-        }
+        default: null,
+      },
+      patternUnits: {
+        type: String,
+        default: 'objectBoundingBox'
       },
       size: {
         type: Object,
-        default () {
-          return new Point( 10, 10 );
-        }
+        default: new Point( 10, 10 ),
       }
     }
   };

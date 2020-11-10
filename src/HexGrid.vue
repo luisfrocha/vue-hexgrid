@@ -3,6 +3,7 @@
     :width="width"
     :height="height"
     :viewBox="viewBox"
+    :preserveAspectRatio="preserveAspectRatio"
     class="grid"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -14,25 +15,23 @@
   export default {
     name: "HexGrid",
     props: {
-      width: {
-        type: [String, Number],
-        required: true,
-        default() {
-          return 800;
-        }
-      },
       height: {
         type: [String, Number],
         required: true,
-        default() {
-          return 600;
-        }
+        default: 600,
+      },
+      preserveAspectRatio:{
+        type: String,
+        default: 'xMidYMid meet',
+      },
+      width: {
+        type: [String, Number],
+        required: true,
+        default: 800,
       },
       viewBox: {
         type: String,
-        default() {
-          return "-50 -50 100 100";
-        }
+        default: '-50 -50 100 100',
       }
     }
   };
