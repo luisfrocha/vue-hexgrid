@@ -1,6 +1,6 @@
 {
   "name": "vue-hexgrid",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Interactive hexagon grids using Vue",
   "main": "src/index.js",
   "author": "Luis F Rocha",
