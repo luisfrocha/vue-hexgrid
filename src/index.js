@@ -1,13 +1,13 @@
 // @ts-nocheck
 import GridGenerator from './GridGenerator';
-import HexGrid from './HexGrid';
+import HexGrid from './HexGrid.vue';
 import HexUtils from './HexUtils';
-import Layout from './Layout';
-import Path from './Path';
-import Pattern from './Pattern';
+import Layout from './Layout.vue';
+import Path from './Path.vue';
+import Pattern from './Pattern.vue';
 
-import Hexagon from './Hexagon/Hexagon';
-import Text from './Hexagon/Text';
+import Hexagon from './Hexagon/Hexagon.vue';
+import Text from './Hexagon/Text.vue';
 
 import Hex from './models/Hex';
 
